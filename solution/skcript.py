@@ -1,6 +1,7 @@
 from collections import Counter
-from utils import handle_wildcard
+from .utils import handle_wildcard
 import click
+
 
 class Main:
     """
@@ -46,7 +47,9 @@ class Main:
 
         In case of tie most recent match is returned
         """
-        with open("enable1.txt") as f:
+        import os
+        file_path = (os.path.dirname(__file__))+"/enable1.txt"
+        with open(file_path, "r") as f:
             content = f.readlines()
             content = [c.strip() for c in content]
             max_word = ""
@@ -54,4 +57,3 @@ class Main:
                 if self.magic(jumble, c) and len(c) >= len(max_word):
                     max_word = c
         return max_word.strip()
-

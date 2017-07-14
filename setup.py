@@ -9,7 +9,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        magic=cli:magic
-	longest=cli:longest
+        magic=solution.cli:magic
+        longest=solution.cli:longest
     ''',
 )

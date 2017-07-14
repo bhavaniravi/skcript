@@ -1,10 +1,7 @@
-import os
-import sys
 import unittest
 import pep8
 import random
-from context import *
-from skcript import Main
+from solution import skcript
 
 
 class TestCodeFormat(unittest.TestCase):
@@ -14,7 +11,7 @@ class TestCodeFormat(unittest.TestCase):
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide()
-        result = pep8style.check_files(['skcript.py', __file__])
+        result = pep8style.check_files([skcript.__file__, __file__])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
@@ -26,7 +23,7 @@ class MagicTest(unittest.TestCase):
 
     def setUp(self):
         """ SetUp Main's object """
-        self.main = Main()
+        self.main = skcript.Main()
 
     def test_magic_with_empty_string(self):
         """Test on empty Strings"""
@@ -100,7 +97,7 @@ class MagicTest(unittest.TestCase):
 
 
 def find_longest_word_in_enable():
-    with open("enable1.txt") as f:
+    with open("../solution/enable1.txt") as f:
         content = f.readlines()
         content = [c.strip() for c in content]
         max_length_word = max(content, key=len)
@@ -110,11 +107,11 @@ def find_longest_word_in_enable():
 
 class LongestTest(unittest.TestCase):
     def setUp(self):
-        self.main = Main()
+        self.main = skcript.Main()
 
-    # def test_empty_jumble(self):
-    #     """Test for empty string"""
-    #     self.assertEqual("", self.main.longest(""))
+    def test_empty_jumble(self):
+        """Test for empty string"""
+        self.assertEqual("", self.main.longest(""))
 
     def test_longest_wildcard(self):
         """To test longest word is found using wildcard and jumble of itself"""
@@ -125,7 +122,11 @@ class LongestTest(unittest.TestCase):
         # comment above 2 lines and
         # uncomment next line if content of enable1.txt is changed
         # max_len, max_length_word = find_longest_word_in_enable()
+
+        # assert for wildcards
         self.assertEqual(max_length_word, self.main.longest("?" * max_len))
+
+        # assert for jumbled word
         jumble = ''.join(random.sample(max_length_word, max_len))
         self.assertEqual(max_length_word, self.main.longest(jumble))
 

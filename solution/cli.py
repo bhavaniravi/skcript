@@ -1,4 +1,4 @@
-from skcript import Main
+from solution.skcript import Main
 import click
 
 @click.command()
