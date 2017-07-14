@@ -1,6 +1,0 @@
-skcript_cli.egg-info/PKG-INFO
-skcript_cli.egg-info/SOURCES.txt
-skcript_cli.egg-info/dependency_links.txt
-skcript_cli.egg-info/entry_points.txt
-skcript_cli.egg-info/requires.txt
-skcript_cli.egg-info/top_level.txt
