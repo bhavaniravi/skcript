@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="skcript-cli",
+    name="wordmagic",
     version='0.1',
     py_modules=['cli'],
     install_requires=[
