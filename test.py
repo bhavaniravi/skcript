@@ -100,12 +100,16 @@ class LongestTest(unittest.TestCase):
         self.assertEqual("", self.main.longest(""))
 
     def test_longest_wildcard(self):
-        max_length_word = "ethylenediaminetetraacetates"
+        max_length_word = "ethylenediaminetetraacetate"
         max_len = len(max_length_word)
 
         # uncomment if content of enable1.txt is changed
-        # max_len,max_length_word = find_longest_word_in_enable()
+        max_len, max_length_word = find_longest_word_in_enable()
         self.assertEqual(max_length_word, self.main.longest("?" * max_len))
+
+    def test_for_outcomes(self):
+        self.assertEqual("turquois", self.main.longest("uruqrnytrois"))
+        self.assertEqual("greengrocery", self.main.longest("rryqeiaegicgeo??"))
 
 
 if __name__ == '__main__':
