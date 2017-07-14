@@ -1,7 +1,10 @@
-from skcript import Main
+import os
+import sys
 import unittest
 import pep8
 import random
+from context import *
+from skcript import Main
 
 
 class TestCodeFormat(unittest.TestCase):
