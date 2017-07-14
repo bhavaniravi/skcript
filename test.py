@@ -5,7 +5,9 @@ import random
 
 
 class TestCodeFormat(unittest.TestCase):
-
+    """
+    Unit test to maintain pep8 standards
+    """
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide()
@@ -63,6 +65,11 @@ class MagicTest(unittest.TestCase):
                 self.assertEqual(True, self.main.magic(jumble, word))
 
     def test_magic_for_true_with_wildcards(self):
+        """
+        Test for true outcomes in a set of params with wildcards
+        The test has n words each is shuffled
+        and tested across words
+        """
         words = {"p???????": "python",
                  "j??????": "jumble",
                  "e???": "easy",
@@ -73,11 +80,17 @@ class MagicTest(unittest.TestCase):
                 self.assertEqual(True, self.main.magic(jumble, word))
 
     def test_magic_for_false_with_wildcards(self):
+        """
+        Test for False outcomes in a set of params with wildcards
+        The test has n words each is shuffled
+        and tested across words
+        """
         words = {"p???": "python",
                  "j???": "jumble",
                  "e??": "easy",
                  "d???": "difficult",
-                 "a???": "answer"}
+                 "a???": "answer",
+                 "a???": "a--"}
         for jumble, word in words.items():
             with self.subTest(jumble=jumble, word=word):
                 self.assertEqual(False, self.main.magic(jumble, word))
@@ -96,16 +109,22 @@ class LongestTest(unittest.TestCase):
     def setUp(self):
         self.main = Main()
 
-    def test_empty_jumble(self):
-        self.assertEqual("", self.main.longest(""))
+    # def test_empty_jumble(self):
+    #     """Test for empty string"""
+    #     self.assertEqual("", self.main.longest(""))
 
     def test_longest_wildcard(self):
-        max_length_word = "ethylenediaminetetraacetate"
+        """To test longest word is found using wildcard and jumble of itself"""
+
+        max_length_word = "ethylenediaminetetraacetates"
         max_len = len(max_length_word)
 
-        # uncomment if content of enable1.txt is changed
-        max_len, max_length_word = find_longest_word_in_enable()
+        # comment above 2 lines and
+        # uncomment next line if content of enable1.txt is changed
+        # max_len, max_length_word = find_longest_word_in_enable()
         self.assertEqual(max_length_word, self.main.longest("?" * max_len))
+        jumble = ''.join(random.sample(max_length_word, max_len))
+        self.assertEqual(max_length_word, self.main.longest(jumble))
 
     def test_for_outcomes(self):
         self.assertEqual("turquois", self.main.longest("uruqrnytrois"))

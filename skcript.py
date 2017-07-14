@@ -1,4 +1,5 @@
 from collections import Counter
+from utils import handle_wildcard
 
 
 class Main:
@@ -26,7 +27,7 @@ class Main:
         counter = Counter(word) - Counter(jumble)
         if '?' not in jumble:
             return not counter
-        return sum(counter.values()) <= jumble.count('?')
+        return handle_wildcard(counter, jumble)
 
     def longest(self, jumble):
         """
@@ -42,10 +43,12 @@ class Main:
 
         Raises:
             TypeError: if params are not string.
+
+        In case of tie most recent match is returned
         """
         with open("enable1.txt") as f:
             content = f.readlines()
-            content = [c.strip() for c in content if len(c) <= len(jumble)]
+            content = [c.strip() for c in content]
             max_word = ""
             for index, c in enumerate(content):
                 if self.magic(jumble, c) and len(c) >= len(max_word):
