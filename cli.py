@@ -16,5 +16,5 @@ def magic(s,w):
 @click.option('-s')
 def longest(s):
 	output = Main().longest(s)
-	print ('The longest word in enable1.txt that can be formed with "{s}" is "{word}"'.format(s=s,word=output))
+	print ('The longest word that can be formed with "{s}"is "{word}"'.format(s=s,word=output))
 	

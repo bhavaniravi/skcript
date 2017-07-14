@@ -1,0 +1,7 @@
+cli.py
+magic.egg-info/PKG-INFO
+magic.egg-info/SOURCES.txt
+magic.egg-info/dependency_links.txt
+magic.egg-info/entry_points.txt
+magic.egg-info/requires.txt
+magic.egg-info/top_level.txt
