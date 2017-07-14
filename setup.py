@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="magic",
+    name="skcript-cli",
     version='0.1',
     py_modules=['cli'],
     install_requires=[
