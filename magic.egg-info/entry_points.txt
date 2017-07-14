@@ -1,5 +1,0 @@
-
-        [console_scripts]
-        magic=cli:magic
-	longest=cli:longest
-    
