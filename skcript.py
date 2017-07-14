@@ -1,6 +1,6 @@
 from collections import Counter
 from utils import handle_wildcard
-
+import click
 
 class Main:
     """
@@ -54,3 +54,4 @@ class Main:
                 if self.magic(jumble, c) and len(c) >= len(max_word):
                     max_word = c
         return max_word.strip()
+

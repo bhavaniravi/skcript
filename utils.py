@@ -15,5 +15,10 @@ def handle_wildcard(counter,jumble):
     """
     for c in counter.elements():
         if not c.isalpha():
+            """
+            The problem defenition states wildcards can be mapped only to 26 alphabets
+            hence if the remainder of counter contains any punctuation it cannot be mapped 
+            hence return false
+            """
             return False
     return sum(counter.values()) <= jumble.count('?')
