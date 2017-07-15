@@ -1,5 +1,0 @@
-
-        [console_scripts]
-        magic=solution.cli:magic
-        longest=solution.cli:longest
-    
