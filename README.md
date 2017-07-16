@@ -12,21 +12,21 @@ Project built to perform the following task
 ```
 Word Magic
  |__ Solution
- 		|__ skcript.py
- 		|__ cli.py
+ 	|__ skcript.py
+ 	|__ cli.py
  |__ Tests
- 		|__ test.py
+ 	|__ test.py
  |__ Mainfest.in
  |__ README.md
  |__ requirements.txt
- |__setup.py
+ |__ setup.py
 ```
 
 ### Setup
 
 1. Clone the project from `https://github.com/bhavaniravi/word_magic`
 2. Create a virutalenv 
-3. Install required packages using `pip install requirements.txt`
+3. Install required packages using `pip install -r requirements.txt`
 
 ### Running the programm
 
