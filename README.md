@@ -48,6 +48,6 @@ main.longest("????????????????")
 2. `cd word_magic`
 3. `python setup.py install`
 4. To use magic command
-	`magic -s "abcd??"  -w "abcdef"
+	`magic -s "abcd??"  -w "abcdef"`
 5. To use longest command 
-	`longest -s "aa"
+	`longest -s "aa"`
