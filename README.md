@@ -5,7 +5,7 @@ Project built to perform the following task
 
 ### Requirements 
 
-`Python 3.5`
+Tested with `Python 3.5`
 
 ### Project Structure 
 
@@ -53,3 +53,8 @@ main.longest("????????????????")
 	`magic -s "abcd??"  -w "abcdef"`
 5. To use longest command 
 	`longest -s "aa"`
+
+### Unit Test
+
+1. `cd word_magic`
+2. Run `python tests/test.py`
