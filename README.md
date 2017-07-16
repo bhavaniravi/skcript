@@ -26,7 +26,9 @@ Word Magic
 
 1. Clone the project from `https://github.com/bhavaniravi/word_magic`
 2. [Create a virutalenv](https://stackoverflow.com/questions/23842713/using-python-3-in-virtualenv)
-3. Install required packages using `pip install -r requirements.txt`
+3. Activate your virtualenv
+4. `cd word_magic`
+5. Install required packages using `pip install -r requirements.txt`
 
 ### Running the programm
 
